@@ -58,7 +58,7 @@ public class PdfInvoiceExtractor {
             }
         }
         {
-            String reg = "合计¥?(?<amount>[^ \\f\\n\\r\\t\\v\\*]*)(?:¥?(?<taxAmount>\\S*)|\\*+)\\s";
+            String reg = "合计¥?(?<amount>[^ \\f\\n\\r\\t\\v\\*]*)¥(?:¥?(?<taxAmount>\\S*)|\\*+)\\s";
             Pattern pattern = Pattern.compile(reg);
             Matcher matcher = pattern.matcher(allText);
             if (matcher.find()) {
